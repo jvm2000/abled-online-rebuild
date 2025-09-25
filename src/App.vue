@@ -1,7 +1,33 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Layout from './layouts/DefaultLayout.vue'
+import { onMounted } from 'vue'
+
+function setTitle(titleChunk: string | null) {
+  document.title = titleChunk
+    ? `${titleChunk} · Abled Online`
+    : 'Abled Online'
+}
+
+function setFavicon(href: string) {
+  let link: HTMLLinkElement | null = document.querySelector("link[rel~='icon']")
+  if (!link) {
+    link = document.createElement('link')
+    link.rel = 'icon'
+    document.head.appendChild(link)
+  }
+  link.href = href
+}
+
+onMounted(() => {
+  setTitle(null)
+  setFavicon('/icons/favicon.png')
+})
 </script>
 
 <template>
-  <div class="text-4xl text-blue-500">Hello</div>
+  <div id="app">
+    <Layout>
+      <router-view />
+    </Layout>
+  </div>
 </template>
