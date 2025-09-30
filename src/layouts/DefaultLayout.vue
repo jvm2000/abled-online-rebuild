@@ -18,7 +18,7 @@ const pageList = ref<Page[]>([
 
 <template>
   <div class="relative">
-    <header class="flex items-center justify-between border-b px-[85px] py-4 w-full fixed top-0">
+    <header class="flex items-center justify-between border-b px-[85px] py-4 w-full bg-white fixed top-0 z-[9999]">
       <img src="/images/logo.png" alt="Logo" class="h-12">
 
       <div class="flex items-center space-x-8">
@@ -35,7 +35,7 @@ const pageList = ref<Page[]>([
       <BaseButton>Get Support</BaseButton>
     </header>
 
-    <main class="px-[85px] mt-16">
+    <main class="mt-16 z-[1]">
       <slot />
     </main>
   </div>
