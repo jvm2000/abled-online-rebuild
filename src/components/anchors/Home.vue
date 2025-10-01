@@ -1,68 +1,66 @@
 <script setup lang="ts">
 import { CheckIcon } from '@heroicons/vue/24/outline'
+import BaseButton from '../BaseButton.vue';
 </script>
 
 <template>
-  <div class="py-24 px-[85px]">
-    <div class="grid grid-cols-2 items-center gap-x-14">
-      <div class="flex flex-col items-start space-y-8">
-        <div class="justify-start space-y-6">
-          <p class="text-6xl text-gray-800 font-bold">
-            <span class="gradient-text">Empowering</span><br> PC Support Services
-          </p>
-        </div>
+  <div class="py-28 w-full flex flex-col items-center space-y-8 relative">
+    <p class="text-7xl text-white font-bold text-center z-10">
+      Empowering <br> <span class="gradient-text">PC Support Services</span>
+    </p>
 
-        <p class="text-xl text-gray-500 max-w-lg">
-          Delivering comprehensive technical solutions with 24/7 professional support. We empower individuals and businesses with reliable, expert PC services that ensure optimal performance and seamless operations.
-        </p>
+    <p class="text-2xl text-white max-w-3xl text-center z-10">
+      Delivering comprehensive technical solutions with 24/7 professional support. We empower individuals and businesses with reliable, expert PC services.
+    </p>
 
-        <div class="flex items-center space-x-8 pt-4">
-          <div class="flex flex-col items-center">
-            <p class="text-2xl text-teal-500 font-bold">24/7</p>
-            <p class="text-sm text-gray-500">Support</p>
-          </div>
+    <div class="flex items-center gap-4 z-10">
+      <BaseButton>
+        <span class="text-base px-4">Request Support</span>
+      </BaseButton>
 
-          <div class="h-8 w-px border" />
+      <button class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-white bg-white font-medium">
+        <span class="text-base">Learn More</span>
+      </button>
+    </div>
 
-          <div class="flex flex-col items-center">
-            <p class="text-2xl text-teal-500 font-bold">1000+</p>
-            <p class="text-sm text-gray-500">Clients</p>
-          </div>
-
-          <div class="h-8 w-px border" />
-
-          <div class="flex flex-col items-center">
-            <p class="text-2xl text-teal-500 font-bold">99%</p>
-            <p class="text-sm text-gray-500">Satisfaction</p>
-          </div>
-        </div>
+    <div class="flex items-center space-x-8 pt-4 z-10">
+      <div class="flex flex-col items-center">
+        <p class="text-3xl text-white font-bold">24/7</p>
+        <p class="text-base text-white">Support</p>
       </div>
 
-      <div class="relative">
-        <div class="rounded-2xl shadow-soft h-[500px] overflow-hidden">
-          <img src="/images/hero-image.jpg" alt="Hero image" class="w-full h-full object-cover">
-        </div>
+      <div class="h-8 w-px border" />
 
-        <div class="absolute -bottom-8 -left-8">
-          <div class="bg-white shadow-xl p-6 flex items-center space-x-4 rounded-md">
-            <div class="bg-green-500 rounded-full p-2.5">
-              <CheckIcon class="w-6 h-6 stroke-white" />
-            </div>
+      <div class="flex flex-col items-center">
+        <p class="text-3xl text-white font-bold">1000+</p>
+        <p class="text-base text-white">Clients</p>
+      </div>
 
-            <div class="justify-start">
-              <p class="text-base text-gray-800 font-medium">Expert Certified</p>
-              <p class="text-sm text-gray-400">Technicians</p>
-            </div>
-          </div>
-        </div>
+      <div class="h-8 w-px border" />
+
+      <div class="flex flex-col items-center">
+        <p class="text-3xl text-white font-bold">99%</p>
+        <p class="text-base text-white">Satisfaction</p>
       </div>
     </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-teal-500/70 to-black/70 -z-11 h-full w-full" />
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      class="absolute top-0 left-0 w-full h-full object-cover -z-10"
+    >
+      <source src="/videos/loop.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
 </template>
 
 <style scoped>
 .gradient-text {
-    background: linear-gradient(90deg, #14b8a6, #3b82f6, #8b5cf6, #ef4444);
+    background: linear-gradient(90deg, #1df7dd, #b6fcf4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

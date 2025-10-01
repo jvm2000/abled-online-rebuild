@@ -28,11 +28,11 @@ const props = withDefaults(
 <template>
   <button 
     v-bind="$attrs"
-    class="flex items-center px-4 py-2.5 bg-teal-500 text-sm rounded-md ring-1 ring-teal-500 font-medium bg"
+    class="flex items-center px-4 py-2.5 text-sm rounded-md ring-1 ring-teal-600 font-medium"
     :class="[
       props.type === 'primary'
-        ? 'bg-teal-500 text-white'
-        : 'bg-inherit text-teal-500'
+        ? 'bg-teal-600 text-white'
+        : 'bg-white text-teal-600'
     ]"
     :disabled="props.disabled"
   >

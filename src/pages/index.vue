@@ -8,9 +8,9 @@ import Team from '../components/anchors/Team.vue';
 <template>
   <Home />
 
-  <About />
-
   <Services />
+
+  <About />
 
   <Team />
 </template>

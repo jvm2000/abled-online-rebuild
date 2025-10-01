@@ -35,7 +35,7 @@ const pageList = ref<Page[]>([
       <BaseButton>Get Support</BaseButton>
     </header>
 
-    <main class="mt-16 z-[1]">
+    <main class="mt-10 z-[1]">
       <slot />
     </main>
   </div>

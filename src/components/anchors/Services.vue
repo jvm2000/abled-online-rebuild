@@ -107,11 +107,11 @@ const services: Services[] = [
 </script>
 
 <template>
-  <div class="pt-12 pb-24 px-[85px] flex flex-col space-y-24">
+  <div class="pt-36 pb-10 px-[85px] flex flex-col space-y-24">
     <div class="flex flex-col items-center space-y-4">
       <p class="text-4xl font-bold text-gray-800">Professional PC Support Services</p>
 
-      <p class="text-gray-400 text-xl text-center">
+      <p class="text-gray-400 text-lg text-center">
         Comprehensive technical solutions delivered by certified professionals. From hardware <br> repairs to cybersecurity, we provide reliable support for all your computing needs.
       </p>
     </div>
