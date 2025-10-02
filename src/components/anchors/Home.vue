@@ -45,6 +45,7 @@ import BaseButton from '../BaseButton.vue';
     </div>
 
     <div class="absolute inset-0 bg-gradient-to-b from-teal-500/70 to-black/70 -z-11 h-full w-full" />
+    
     <video 
       autoplay 
       muted 

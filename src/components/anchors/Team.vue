@@ -62,13 +62,26 @@ const members: TeamMembers[] = [
 </script>
 
 <template>
-  <div class="py-24 px-[85px] bg-gray-100">
+  <div class="py-24 px-44 bg-gray-100 space-y-16">
     <div class="flex flex-col items-start space-y-6">
       <p class="text-5xl text-gray-800 font-bold">Meet Our <br> <span class="text-teal-500">Team</span></p>
 
       <p class="text-base text-gray-800">
         Diverse specialists combining experience with cutting-edge expertise to deliver exceptional results.
       </p>
+    </div>
+
+    <div class="grid grid-cols-4 gap-10">
+      <div v-for="member in members" class="relative overflow-hidden rounded-md h-72">
+        <img :src="member.image" class="w-full h-72 object-cover -z-10">
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent -z-11"></div>
+
+        <div class="flex flex-col items-start space-y-1 p-2 absolute -z-9 bottom-4 left-4">
+          <p class="text-xl text-white font-semibold">{{ member.name }}</p>
+          <p class="text-base text-white">{{ member.position }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
