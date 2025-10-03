@@ -9,8 +9,8 @@ type Page = {
 }
 const pageList = ref<Page[]>([
   { name: 'home', path: '/' },
-  { name: 'about', path: '/about' },
   { name: 'services', path: '/services' },
+  { name: 'about', path: '/about' },
   { name: 'our team', path: '/our-team' },
   { name: 'news', path: '/news' },
   { name: 'contact', path: '/contact' }
@@ -18,8 +18,8 @@ const pageList = ref<Page[]>([
 </script>
 
 <template>
-  <div class="relative">
-    <header class="flex items-center justify-between border-b px-[85px] py-4 w-full bg-white fixed top-0 z-[9999]">
+  <div class="relative min-h-screen">
+    <header class="flex items-center justify-between border-b px-[85px] py-4 w-full bg-white fixed top-0 z-[40]">
       <img src="/images/logo.png" alt="Logo" class="h-16">
 
       <div class="flex items-center space-x-8">
