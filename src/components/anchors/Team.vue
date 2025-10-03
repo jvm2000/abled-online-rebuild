@@ -62,7 +62,7 @@ const members: TeamMembers[] = [
 </script>
 
 <template>
-  <div class="py-24 px-44 bg-gray-100 space-y-16">
+  <div class="py-24 px-44 space-y-16 bg-gray-50">
     <div class="flex flex-col items-start space-y-6">
       <p class="text-5xl text-gray-800 font-bold">Meet Our <br> <span class="text-teal-500">Team</span></p>
 
@@ -75,11 +75,59 @@ const members: TeamMembers[] = [
       <div v-for="member in members" class="relative overflow-hidden rounded-md h-72">
         <img :src="member.image" class="w-full h-72 object-cover -z-10">
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent -z-11"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent -z-11"></div>
 
         <div class="flex flex-col items-start space-y-1 p-2 absolute -z-9 bottom-4 left-4">
           <p class="text-xl text-white font-semibold">{{ member.name }}</p>
           <p class="text-base text-white">{{ member.position }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-16 pb-36 px-44 bg-gray-50">
+    <div class="w-full grid grid-cols-2 items-start gap-x-14">
+      <div class="flex flex-col items-start space-y-8">
+        <div class="px-5 py-1.5 bg-teal-100 rounded-full">
+          <p class="text-base text-teal-600 font-medium">Our Culture</p>
+        </div>
+
+        <p class="text-4xl font-bold text-gray-800">
+          Built on Collaboration & <br>Innovation
+        </p>
+
+        <p class="text-base text-gray-400">
+          At Abled Online, we foster a culture of continuous learning and collaboration. Our team thrives on solving complex technical challenges and delivering solutions that exceed expectations.
+        </p>
+
+        <p class="text-base text-gray-400">
+          We believe in transparency, accountability, and building long-term relationships with our clients through exceptional service and technical excellence.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 items-end gap-8">
+        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
+          <p class="text-3xl font-bold text-teal-500">100%</p>
+
+          <p class="text-sm text-gray-400">Remote Support</p>
+        </div>
+
+        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-28">
+          <p class="text-3xl font-bold text-red-500">50+</p>
+
+          <p class="text-sm text-gray-400">Certifications</p>
+        </div>
+
+        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
+          <p class="text-3xl font-bold text-green-500">10+</p>
+
+          <p class="text-sm text-gray-400">Industries Served</p>
+        </div>
+
+        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-28">
+          <p class="text-3xl font-bold text-teal-600">4.9</p>
+
+          <p class="text-sm text-gray-400">Average Rating</p>
         </div>
       </div>
     </div>
