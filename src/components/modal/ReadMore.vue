@@ -3,7 +3,7 @@ import { ref, watch } from 'vue'
 import { TransitionRoot, TransitionChild, Dialog, DialogPanel } from '@headlessui/vue'
 import { XMarkIcon, CalendarIcon } from '@heroicons/vue/24/outline'
 
-const isOpen = ref(true)
+const isOpen = ref(false)
 
 watch(isOpen, (val) => {
   if (val) {
