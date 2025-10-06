@@ -4,20 +4,20 @@ import ReadMore from '../modal/ReadMore.vue';
 </script>
 
 <template>
-  <div class="py-36 flex flex-col items-center w-full">
+  <div class="py-36 flex flex-col items-center w-full px-6 lg:px-0">
     <div class="flex flex-col items-start space-y-6">
-      <p class="text-7xl font-bold text-gray-800">
-        Recognized for <span class="text-teal-600">Inclusive</span> <br> Excellence
+      <p class="text-5xl sm:text-7xl font-bold text-gray-800">
+        Recognized for <span class="text-teal-600">Inclusive</span> <br class="hidden lg:block"> Excellence
       </p>
 
       <p class="text-2xl text-gray-400 font-light">
-        We are dedicated to fostering an environment where everyone can thrive <br> and succeed.
+        We are dedicated to fostering an environment where everyone can thrive <br class="hidden lg:block"> and succeed.
       </p>
     </div>
   </div>
 
-  <div class="pb-36 px-44">
-    <div class="grid grid-cols-2 rounded-md drop-shadow-md bg-white overflow-hidden">
+  <div class="pb-36 px-0 md:px-6 sm:xl:px-44">
+    <div class="grid grid-cols-1 lg:grid-cols-2 sm:rounded-md drop-shadow-md bg-white overflow-hidden">
       <div class="w-full relative h-80">
         <img src="/images/news/award.jpg" class="w-full h-full object-cover">
 

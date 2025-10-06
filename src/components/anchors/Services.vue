@@ -107,16 +107,16 @@ const services: Services[] = [
 </script>
 
 <template>
-  <div class="pt-36 pb-10 px-[85px] flex flex-col space-y-24">
+  <div class="pt-36 pb-10 px-6 sm:px-[85px] flex flex-col space-y-24">
     <div class="flex flex-col items-center space-y-4">
       <p class="text-4xl font-bold text-gray-800">Professional PC Support Services</p>
 
-      <p class="text-gray-400 text-lg text-center">
-        Comprehensive technical solutions delivered by certified professionals. From hardware <br> repairs to cybersecurity, we provide reliable support for all your computing needs.
+      <p class="text-gray-400 text-lg sm:text-center">
+        Comprehensive technical solutions delivered by certified professionals. From hardware <br class="hidden lg:block"> repairs to cybersecurity, we provide reliable support for all your computing needs.
       </p>
     </div>
 
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-8">
       <div v-for="service in services" class="p-6 bg-white rounded-md border border-gray-200 shadow-md relative">
         <div class="flex flex-col items-start space-y-4">
           <div class="size-16 bg-teal-100 rounded-md grid place-items-center">

@@ -62,7 +62,7 @@ const members: TeamMembers[] = [
 </script>
 
 <template>
-  <div class="py-24 px-44 space-y-16 bg-gray-50">
+  <div class="py-24 px-6 sm:xl:px-44 space-y-16 bg-gray-50">
     <div class="flex flex-col items-start space-y-6">
       <p class="text-5xl text-gray-800 font-bold">Meet Our <br> <span class="text-teal-500">Team</span></p>
 
@@ -71,7 +71,7 @@ const members: TeamMembers[] = [
       </p>
     </div>
 
-    <div class="grid grid-cols-4 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
       <div v-for="member in members" class="relative overflow-hidden rounded-md h-72">
         <img :src="member.image" class="w-full h-72 object-cover -z-10">
 
@@ -85,15 +85,15 @@ const members: TeamMembers[] = [
     </div>
   </div>
 
-  <div class="pt-16 pb-36 px-44 bg-gray-50">
-    <div class="w-full grid grid-cols-2 items-start gap-x-14">
+  <div class="pt-16 pb-36 px-6 sm:xl:px-44 bg-gray-50">
+    <div class="w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-x-14 gap-y-16">
       <div class="flex flex-col items-start space-y-8">
         <div class="px-5 py-1.5 bg-teal-100 rounded-full">
           <p class="text-base text-teal-600 font-medium">Our Culture</p>
         </div>
 
         <p class="text-4xl font-bold text-gray-800">
-          Built on Collaboration & <br>Innovation
+          Built on Collaboration & <br class="hidden sm:block">Innovation
         </p>
 
         <p class="text-base text-gray-400">
@@ -105,7 +105,7 @@ const members: TeamMembers[] = [
         </p>
       </div>
 
-      <div class="grid grid-cols-2 items-end gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 items-end gap-8">
         <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
           <p class="text-3xl font-bold text-teal-500">100%</p>
 

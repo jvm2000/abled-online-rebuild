@@ -35,36 +35,36 @@ const coreValues: CoreValues[] = [
 </script>
 
 <template>
-  <div class="pt-24">
-    <div class="w-full py-20 bg-teal-500 flex flex-col items-center space-y-6">
+  <div class="pt-12 lg:pt-24">
+    <div class="w-full py-20 bg-teal-500 flex flex-col items-center space-y-6 px-6 md:px-0">
       <p class="text-6xl font-bold text-white">Our Story</p>
 
-      <p class="text-center text-2xl text-white">
-        A journey of innovation, dedication, and empowering communities through exceptional <br> technical support
+      <p class="text-center text-lg md:text-2xl text-white">
+        A journey of innovation, dedication, and empowering communities through exceptional <br class="hidden lg:block"> technical support
       </p>
     </div>
   </div>
 
-  <div class="py-36 space-y-36 px-36 bg-gray-50">
-    <div class="relative">
+  <div class="py-36 space-y-12 lg:space-y-36 px-0 md:px-14 sm:xl:px-36 bg-gray-50">
+    <div class="relative px-6 md:px-0">
       <div 
         class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-teal-500 via-red-500 to-green-500"
       />
 
-      <div class="grid grid-cols-2 gap-x-24 gap-y-52 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-52 py-24">
         <div class="flex flex-col items-end space-y-2">
           <div class="px-5 py-1.5 bg-teal-100 rounded-full">
             <p class="text-base text-teal-500 font-medium">The Mission</p>
           </div>
 
-          <p class="text-2xl text-gray-800 font-bold">Empowering Through Inclusivity</p>
+          <p class="text-2xl text-gray-800 font-bold text-right">Empowering Through Inclusivity</p>
 
           <p class="text-base text-gray-400 text-right">
             At Abled Online, we believe in the power of inclusivity and the incredible potential of persons with disabilities (PWDs). Our mission is to provide meaningful employment opportunities for PWDs, enabling them to work from the comfort of their homes while delivering top-notch remote PC support services to clients worldwide.
           </p>
         </div>
 
-        <div class="flex items-center w-full">
+        <div class="hidden lg:flex items-center w-full">
           <div class="flex flex-col items-center w-full">
             <div class="size-20 bg-teal-500 grid place-items-center rounded-full shadow-md">
               <div class="size-10 bg-white rounded-full" />
@@ -72,7 +72,7 @@ const coreValues: CoreValues[] = [
           </div>
         </div>
 
-        <div class="flex items-center w-full">
+        <div class="hidden lg:flex items-center w-full">
           <div class="flex flex-col items-center w-full">
             <div class="size-20 bg-red-500 grid place-items-center rounded-full shadow-md">
               <div class="size-10 bg-white rounded-full" />
@@ -104,7 +104,7 @@ const coreValues: CoreValues[] = [
           </p>
         </div>
 
-        <div class="flex items-center w-full">
+        <div class="hidden lg:flex items-center w-full">
           <div class="flex flex-col items-center w-full">
             <div class="size-20 bg-green-500 grid place-items-center rounded-full shadow-md">
               <div class="size-10 bg-white rounded-full" />
@@ -114,12 +114,12 @@ const coreValues: CoreValues[] = [
       </div>
     </div>
 
-    <div class="w-full flex flex-col items-center py-16 rounded-md border border-teal-300 bg-gradient-to-r from-teal-100 via-pink-300/20 to-teal-100/50 space-y-4 ">
+    <div class="w-full flex flex-col px-6 lg:px-0 items-center py-16 rounded-md border border-teal-300 bg-gradient-to-r from-teal-100 via-pink-300/20 to-teal-100/50 space-y-4 ">
       <p class="text-3xl font-bold text-gray-800">Join Us on Our Journey</p>
 
       <p class="text-lg text-center text-gray-400">
-        We're always looking for talented individuals and organizations to partner with. <br> 
-        Whether you need exceptional PC support or want to be part of our growing team, <br> 
+        We're always looking for talented individuals and organizations to partner with. <br class="hidden lg:block"> 
+        Whether you need exceptional PC support or want to be part of our growing team, <br class="hidden lg:block"> 
         let's connect.
       </p>
 
@@ -135,18 +135,18 @@ const coreValues: CoreValues[] = [
     </div>
   </div>
 
-  <div class="py-24">
-    <div class="flex flex-col items-center space-y-4">
+  <div class="py-24 px-6 sm:px-0">
+    <div class="flex flex-col sm:items-center space-y-4">
       <p class="text-4xl font-bold text-gray-800">Our Core Values</p>
 
-      <p class="text-gray-400 text-xl text-center">
-        These fundamental principles guide everything we do and shape our commitment to <br > excellence in PC support services.
+      <p class="text-gray-400 text-lg lg:text-xl sm:text-center">
+        These fundamental principles guide everything we do and shape our commitment to <br class="hidden sm:block"> excellence in PC support services.
       </p>
     </div>
   </div>
 
-  <div class="pt-12 pb-36 px-[85px]">
-    <div class="grid grid-cols-3 gap-12">
+  <div class="pt-12 pb-36 px-6 lg:px-[85px]">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-12">
       <div 
         v-for="(core, index) in coreValues"
         :key="index"

@@ -5,12 +5,12 @@ import BaseButton from '../BaseButton.vue';
 </script>
 
 <template>
-  <div class="pt-12 pb-36 space-y-24">
+  <div class="pt-12 px-6 sm:px-0 pb-36 space-y-24">
     <div class="flex flex-col items-center space-y-4">
       <p class="text-4xl font-bold text-gray-800">Get in Touch</p>
 
       <p class="text-gray-400 text-lg text-center">
-        Have questions or need assistance? We'd love to hear from you. Send us a message <br> and we'll respond as soon as possible.
+        Have questions or need assistance? We'd love to hear from you. Send us a message <br class="hidden sm:block"> and we'll respond as soon as possible.
       </p>
     </div>
     

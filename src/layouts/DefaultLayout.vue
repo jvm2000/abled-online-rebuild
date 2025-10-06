@@ -7,6 +7,7 @@ type Page = {
   name: string,
   path: string
 }
+
 const pageList = ref<Page[]>([
   { name: 'home', path: '/' },
   { name: 'services', path: '/services' },
@@ -19,10 +20,10 @@ const pageList = ref<Page[]>([
 
 <template>
   <div class="relative min-h-screen">
-    <header class="flex items-center justify-between border-b px-[85px] py-4 w-full bg-white fixed top-0 z-[40]">
-      <img src="/images/logo.png" alt="Logo" class="h-16">
+    <header class="flex items-center justify-between border-b px-6 sm:lg:px-[85px] py-4 w-full bg-white fixed top-0 z-[40]">
+      <img src="/images/logo.png" alt="Logo" class="h-12 sm:h-16">
 
-      <div class="flex items-center space-x-8">
+      <div class="hidden sm:flex items-center space-x-8">
         <RouterLink
           v-for="page in pageList"
           :key="page.name"
@@ -33,15 +34,15 @@ const pageList = ref<Page[]>([
         </RouterLink>
       </div>
 
-      <BaseButton>Get Support</BaseButton>
+      <BaseButton class="hidden sm:lg:block">Get Support</BaseButton>
     </header>
 
     <main class="mt-14 z-[1]">
       <slot />
     </main>
 
-    <footer class="px-24 pt-16 pb-8 bg-gray-800 w-full space-y-6">
-      <div class="grid grid-cols-3 items-start border-b pb-12 border-gray-700">
+    <footer class="px-6 sm:xl:px-24 pt-16 pb-8 bg-gray-800 w-full space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 sm:lg:grid-cols-3 items-start border-b pb-12 border-gray-700">
         <div class="flex flex-col items-start space-y-6">
           <div class="size-8 bg-white" />
 

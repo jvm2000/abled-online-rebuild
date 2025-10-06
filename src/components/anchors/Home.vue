@@ -3,12 +3,12 @@ import BaseButton from '../BaseButton.vue';
 </script>
 
 <template>
-  <div class="py-28 w-full flex flex-col items-center space-y-8 relative">
-    <p class="text-7xl text-white font-bold text-center z-10">
+  <div class="py-28 w-full flex flex-col items-center space-y-8 relative px-6 sm:px-0">
+    <p class="text-6xl sm:text-7xl text-white font-bold text-left sm:text-center z-10">
       Empowering <br> <span class="gradient-text">PC Support Services</span>
     </p>
 
-    <p class="text-2xl text-white max-w-3xl text-center z-10">
+    <p class="text-lg sm:lg:text-2xl text-white sm:max-w-3xl text-left sm:text-center z-10">
       Delivering comprehensive technical solutions with 24/7 professional support. We empower individuals and businesses with reliable, expert PC services.
     </p>
 
