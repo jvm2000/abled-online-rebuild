@@ -10,9 +10,9 @@ import Team from '../components/anchors/Team.vue';
 <template>
   <Home />
 
-  <Services />
-
   <About />
+
+  <Services />
 
   <Team />
 

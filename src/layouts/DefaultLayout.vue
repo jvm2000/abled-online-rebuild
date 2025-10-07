@@ -2,7 +2,7 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { Bars3Icon } from '@heroicons/vue/20/solid'
 import { EnvelopeIcon, PhoneIcon, ClockIcon, MapPinIcon } from '@heroicons/vue/24/outline'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import BaseButton from '../components/BaseButton.vue'
 
 type Page = {
@@ -12,12 +12,13 @@ type Page = {
 
 const pageList = ref<Page[]>([
   { name: 'home', path: 'home' },
-  { name: 'services', path: 'services' },
   { name: 'about', path: 'about' },
+  { name: 'services', path: 'services' },
   { name: 'our team', path: 'our-team' },
   { name: 'news', path: 'news' },
   { name: 'contact', path: 'contact' }
 ])
+const activeSection = ref('home')
 
 function scrollToSection(sectionId: string) {
   const element = document.getElementById(sectionId)
@@ -28,36 +29,63 @@ function scrollToSection(sectionId: string) {
     })
   }
 }
+
+function handleScroll() {
+  const scrollPosition = window.scrollY + window.innerHeight / 3
+
+  for (const page of pageList.value) {
+    const section = document.getElementById(page.path)
+    if (section) {
+      const rect = section.getBoundingClientRect()
+      const sectionTop = rect.top + window.scrollY
+      const sectionBottom = sectionTop + section.offsetHeight
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        activeSection.value = page.path
+        break
+      }
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll()
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
   <div class="relative min-h-screen">
-    <header class="flex items-center justify-between border-b px-6 sm:lg:px-[85px] py-4 w-full bg-white fixed top-0 z-[40]">
-      <img src="/images/logo.png" alt="Logo" class="h-12 sm:h-16">
+    <header class="flex items-center justify-between border-b px-6 sm:lg:px-[85px] py-0 w-full bg-white fixed top-0 z-[40]">
+      <img src="/images/logo.png" alt="Logo" class="h-24 sm:h-32">
 
       <div class="hidden sm:flex items-center space-x-8">
         <button
           v-for="page in pageList"
           :key="page.name"
-          class="text-base font-semibold capitalize text-gray-800 hover:text-teal-500 transition-colors duration-300"
+          :class="[
+            'text-lg lg:text-xl font-semibold capitalize transition-colors duration-300',
+            activeSection === page.path
+              ? 'text-teal-600'
+              : 'text-black hover:text-teal-600'
+          ]"
           @click="scrollToSection(page.path)"
         >
           {{ page.name }}
         </button>
       </div>
 
-      <BaseButton 
-        class="hidden sm:lg:block"
-        @click="scrollToSection('contact')"
-      >Get Support</BaseButton>
-
-      <Menu as="div" class="relative inline-block text-left lg:hidden">
+      <Menu as="div" class="relative inline-block text-left md:hidden">
         <div>
           <MenuButton
             class="inline-flex w-full justify-center rounded-md"
           >
             <Bars3Icon
-              class="size-5 text-teal-600 hover:text-teal-500"
+              class="size-6 sm:size-5 text-teal-600 hover:text-teal-500"
               aria-hidden="true"
             />
           </MenuButton>
@@ -96,14 +124,16 @@ function scrollToSection(sectionId: string) {
       </Menu>
     </header>
 
-    <main class="mt-15 sm:mt-14 z-[1]">
+    <main class="mt-15 sm:mt-24 z-[1]">
       <slot />
     </main>
 
-    <footer class="px-6 sm:xl:px-24 pt-16 pb-8 bg-gray-800 w-full space-y-6">
+    <footer class="px-6 sm:xl:px-24 pt-16 pb-8 bg-black w-full space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 sm:lg:grid-cols-3 items-start border-b pb-12 border-gray-700">
         <div class="flex flex-col items-start space-y-6">
-          <div class="size-8 bg-white" />
+          <div class="relative">
+            <img src="/images/logo.png" alt="Logo" class="h-16 sm:h-20">
+          </div>
 
           <p class="text-sm text-gray-200 max-w-xs">
             Join our global community and experience top-notch PC support services at your fingertips. Your satisfaction is our priority.
@@ -113,12 +143,12 @@ function scrollToSection(sectionId: string) {
         <div class="flex flex-col items-start space-y-3">
           <p class="text-lg text-gray-200 font-medium">Services</p>
 
-          <p class="text-sm text-gray-200">PC Repair & Maintenance</p>
-          <p class="text-sm text-gray-200">CCTV Security Services</p>
-          <p class="text-sm text-gray-200">Software Installation</p>
-          <p class="text-sm text-gray-200">Cybersecurity Solutions</p>
-          <p class="text-sm text-gray-200">Network Support</p>
-          <p class="text-sm text-gray-200">Remote Assistance</p>
+          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">PC Repair & Maintenance</p>
+          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">CCTV Security Services</p>
+          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">Software Installation</p>
+          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">Cybersecurity Solutions</p>
+          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">Network Support</p>
+          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">Remote Assistance</p>
         </div>
 
         <div class="flex flex-col items-start space-y-3">

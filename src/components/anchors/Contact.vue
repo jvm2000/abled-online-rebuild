@@ -5,9 +5,9 @@ import BaseButton from '../BaseButton.vue';
 </script>
 
 <template>
-  <section id="contact" class="pt-12 px-6 sm:px-0 pb-36 space-y-24">
+  <section id="contact" class="pt-12 px-6 sm:px-0 pb-16 space-y-12">
     <div class="flex flex-col items-center space-y-4">
-      <p class="text-4xl font-bold text-gray-800">Get in Touch</p>
+      <p class="text-4xl font-bold text-black">Get in Touch</p>
 
       <p class="text-gray-400 text-lg text-center">
         Have questions or need assistance? We'd love to hear from you. Send us a message <br class="hidden sm:block"> and we'll respond as soon as possible.

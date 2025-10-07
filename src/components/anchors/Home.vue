@@ -13,7 +13,7 @@ function scrollToSection(sectionId: string) {
 </script>
 
 <template>
-  <section id="home" class="py-28 w-full flex flex-col items-center space-y-8 relative px-6 sm:px-0">
+  <section id="home" class="pt-44 sm:pt-28 py-28 w-full flex flex-col items-center space-y-8 relative px-6 sm:px-0">
     <p class="text-6xl sm:text-7xl text-white font-bold text-left sm:text-center z-10">
       Empowering <br> <span class="gradient-text">PC Support Services</span>
     </p>

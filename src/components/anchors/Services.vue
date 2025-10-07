@@ -104,49 +104,59 @@ const services: Services[] = [
     ]
   }
 ]
+
+function scrollToSection(sectionId: string) {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
 </script>
 
 <template>
-  <section id="services" class="pt-36 pb-10 px-6 sm:px-[85px] flex flex-col space-y-24">
-    <div class="flex flex-col items-center space-y-4">
-      <p class="text-4xl font-bold text-gray-800">Professional PC Support Services</p>
+  <section id="services" class="pt-24 pb-16 flex flex-col space-y-12">
+    <div class="w-full py-12 bg-teal-500 flex flex-col items-center space-y-6 px-6 lg:px-0">
+      <p class="text-6xl font-bold text-white">Professional PC Support Services</p>
 
-      <p class="text-gray-400 text-lg sm:text-center">
+      <p class="lg:text-center text-lg md:text-2xl text-white">
         Comprehensive technical solutions delivered by certified professionals. From hardware <br class="hidden lg:block"> repairs to cybersecurity, we provide reliable support for all your computing needs.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-8">
+    <div class="grid grid-cols-1 sm:xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-8 px-6 sm:px-[85px]">
       <div 
         v-for="service in services"
         class="p-6 bg-white rounded-md border border-gray-200 shadow-md relative transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl"
       >
         <div class="flex flex-col items-start space-y-4">
-          <div class="size-16 bg-teal-100 rounded-md grid place-items-center">
-            <component :is="service.icon" class="size-8 stroke-teal-500" />
+          <div class="size-24 bg-teal-100 rounded-md grid place-items-center">
+            <component :is="service.icon" class="size-14 stroke-teal-500" />
           </div>
 
-          <p class="text-xl font-medium text-gray-800">{{ service.name}}</p>
+          <p class="text-xl font-medium text-black">{{ service.name}}</p>
 
-          <p class="text-base text-gray-400">{{ service.description }}</p>
+          <p class="text-base text-black">{{ service.description }}</p>
 
           <div class="flex flex-col items-start space-y-1">
             <div v-for="item in service.items" class="flex items-center space-x-2">
               <span class="size-2 bg-teal-500 rounded-full" />
 
-              <p class="text-base text-gray-400 capitalize">{{ item }}</p>
+              <p class="text-base text-black capitalize">{{ item }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-col items-center space-y-4">
-      <BaseButton class="px-8">
+    <div class="flex flex-col items-center space-y-4 px-6 sm:px-0">
+      <BaseButton class="px-8" @click="scrollToSection('contact')">
         <span class="text-xl">Request Custom Support</span>
       </BaseButton>
 
-      <p class="text-base text-gray-400">
+      <p class="text-base text-black">
         Need specialized assistance? Contact our experts for tailored solutions.
       </p>
     </div>
