@@ -3,7 +3,6 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { Bars3Icon } from '@heroicons/vue/20/solid'
 import { EnvelopeIcon, PhoneIcon, ClockIcon, MapPinIcon } from '@heroicons/vue/24/outline'
 import { ref, onMounted, onUnmounted } from 'vue'
-import BaseButton from '../components/BaseButton.vue'
 
 type Page = {
   name: string,
