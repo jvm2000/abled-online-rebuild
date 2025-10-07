@@ -9,13 +9,23 @@ type Page = {
 }
 
 const pageList = ref<Page[]>([
-  { name: 'home', path: '/' },
-  { name: 'services', path: '/services' },
-  { name: 'about', path: '/about' },
-  { name: 'our team', path: '/our-team' },
-  { name: 'news', path: '/news' },
-  { name: 'contact', path: '/contact' }
+  { name: 'home', path: 'home' },
+  { name: 'services', path: 'services' },
+  { name: 'about', path: 'about' },
+  { name: 'our team', path: 'our-team' },
+  { name: 'news', path: 'news' },
+  { name: 'contact', path: 'contact' }
 ])
+
+function scrollToSection(sectionId: string) {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
 </script>
 
 <template>
@@ -24,20 +34,20 @@ const pageList = ref<Page[]>([
       <img src="/images/logo.png" alt="Logo" class="h-12 sm:h-16">
 
       <div class="hidden sm:flex items-center space-x-8">
-        <RouterLink
+        <button
           v-for="page in pageList"
           :key="page.name"
-          :to="page.path"
           class="text-base font-semibold capitalize text-gray-800 hover:text-teal-500 transition-colors duration-300"
+          @click="scrollToSection(page.path)"
         >
           {{ page.name }}
-        </RouterLink>
+        </button>
       </div>
 
       <BaseButton class="hidden sm:lg:block">Get Support</BaseButton>
     </header>
 
-    <main class="mt-14 z-[1]">
+    <main class="mt-15 sm:mt-14 z-[1]">
       <slot />
     </main>
 

@@ -35,7 +35,7 @@ const coreValues: CoreValues[] = [
 </script>
 
 <template>
-  <div class="pt-12 lg:pt-24">
+  <section id="about" class="pt-12 lg:pt-24">
     <div class="w-full py-20 bg-teal-500 flex flex-col items-center space-y-6 px-6 md:px-0">
       <p class="text-6xl font-bold text-white">Our Story</p>
 
@@ -43,7 +43,7 @@ const coreValues: CoreValues[] = [
         A journey of innovation, dedication, and empowering communities through exceptional <br class="hidden lg:block"> technical support
       </p>
     </div>
-  </div>
+  </section>
 
   <div class="py-36 space-y-12 lg:space-y-36 px-0 md:px-14 sm:xl:px-36 bg-gray-50">
     <div class="relative px-6 md:px-0">
@@ -128,7 +128,7 @@ const coreValues: CoreValues[] = [
           <span class="text-base px-4">Get Support</span>
         </BaseButton>
 
-        <button class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-gray-800 bg-white font-medium">
+        <button class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-gray-800 bg-white font-medium hover:scale-105 transition-transform duration-300 ease-in-out">
           <span class="text-base">Meet our Team</span>
         </button>
       </div>
@@ -150,6 +150,7 @@ const coreValues: CoreValues[] = [
       <div 
         v-for="(core, index) in coreValues"
         :key="index"
+        class="transition-all duration-500 ease-in-out hover:-translate-y-4"
       >
         <div class="flex flex-col items-start space-y-6">
           <div :class="`size-16 ${core.bgColor} rounded-full grid place-items-center`">

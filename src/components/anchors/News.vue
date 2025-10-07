@@ -4,7 +4,7 @@ import ReadMore from '../modal/ReadMore.vue';
 </script>
 
 <template>
-  <div class="py-36 flex flex-col items-center w-full px-6 lg:px-0">
+  <section id="news" class="py-36 flex flex-col items-center w-full px-6 lg:px-0">
     <div class="flex flex-col items-start space-y-6">
       <p class="text-5xl sm:text-7xl font-bold text-gray-800">
         Recognized for <span class="text-teal-600">Inclusive</span> <br class="hidden lg:block"> Excellence
@@ -14,12 +14,12 @@ import ReadMore from '../modal/ReadMore.vue';
         We are dedicated to fostering an environment where everyone can thrive <br class="hidden lg:block"> and succeed.
       </p>
     </div>
-  </div>
+  </section>
 
   <div class="pb-36 px-0 md:px-6 sm:xl:px-44">
-    <div class="grid grid-cols-1 lg:grid-cols-2 sm:rounded-md drop-shadow-md bg-white overflow-hidden">
-      <div class="w-full relative h-80">
-        <img src="/images/news/award.jpg" class="w-full h-full object-cover">
+    <div class="grid grid-cols-1 lg:grid-cols-2 sm:rounded-md drop-shadow-md bg-white overflow-hidden group transition-all duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+      <div class="w-full relative h-80 overflow-hidden">
+        <img src="/images/news/award.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
 
         <div class="bg-teal-600 px-4 py-1 rounded-full absolute left-3 top-3">
           <p class="text-sm font-medium text-white">Awards</p>

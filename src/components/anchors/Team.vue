@@ -11,58 +11,62 @@ const members: TeamMembers[] = [
     name: 'Jett Esguerra',
     position: 'Section Manager',
     image: '/images/members/jeff.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/jett-esguerra-502a34a8/'
   }, { 
     name: 'Samim Jawadi',
     position: 'Deputy Head',
     image: '/images/members/samim.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/arifjawadi/'
   }, { 
     name: 'Miguel De Castro',
     position: 'QA Lead/Supervisor',
     image: '/images/members/miguel.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/miguel-andre-de-castro-11a626144/'
   }, { 
     name: 'Abdullah Qasimi',
     position: 'IT Support Specialist',
     image: '/images/members/abdullah.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/abdullah-qasimi/'
   }, { 
     name: 'Samuel Chibuike',
     position: 'IT Support Specialist',
     image: '/images/members/samuel.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/samuelchibuike/'
   }, { 
     name: 'Mushtaq Hussain',
     position: 'IT Support Specialist',
     image: '/images/members/mushtaq.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/mushtaq-hussain-35a6821a5/'
   }, { 
     name: 'Joe Ryan Tuzara',
     position: 'IT Support Specialist',
     image: '/images/members/joe.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/joe-ryan-tuzara-7a6b38295/'
   }, { 
     name: 'Eneye Attah',
     position: 'IT Support Specialist',
     image: '/images/members/eneye.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/eneye-attah-54ab66104'
   }, { 
     name: 'Khalil Jawadi',
     position: 'IT Support Specialist',
     image: '/images/members/khalil.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/khalil-jawadi'
   }, { 
     name: 'Jennelyn Barizo',
     position: 'IT Support Specialist',
     image: '/images/members/jennelyn.png',
-    linkedInURL: ''
+    linkedInURL: 'https://www.linkedin.com/in/jennelynbarizo/'
   }
 ]
+
+function openLink(url: string) {
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
 </script>
 
 <template>
-  <div class="py-24 px-6 sm:xl:px-44 space-y-16 bg-gray-50">
+  <section id="our-team" class="py-24 px-6 sm:xl:px-44 space-y-16 bg-gray-50">
     <div class="flex flex-col items-start space-y-6">
       <p class="text-5xl text-gray-800 font-bold">Meet Our <br> <span class="text-teal-500">Team</span></p>
 
@@ -72,18 +76,29 @@ const members: TeamMembers[] = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
-      <div v-for="member in members" class="relative overflow-hidden rounded-md h-72">
-        <img :src="member.image" class="w-full h-72 object-cover -z-10">
+      <div v-for="member in members" class="relative overflow-hidden rounded-md h-72 transition-all duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl group">
+        <img :src="member.image" class="w-full h-72 object-cover -z-10 group-hover:scale-110 transition-transform duration-500 ease-in-out">
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent -z-11"></div>
+        <div class="absolute inset-0 -z-11">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent transition-opacity duration-500 ease-in-out" />
 
-        <div class="flex flex-col items-start space-y-1 p-2 absolute -z-9 bottom-4 left-4">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100" />
+        </div>
+
+        <div class="flex flex-col items-start space-y-1 p-2 absolute -z-9 bottom-4 left-4 transition-all duration-500 ease-in-out hover:bottom-6">
           <p class="text-xl text-white font-semibold">{{ member.name }}</p>
           <p class="text-base text-white">{{ member.position }}</p>
         </div>
+
+        <button 
+          class="absolute right-4 top-4 rounded-full bg-white size-12 grid place-items-center -z-9 transition-all duration-300 ease-in-out hover:bottom-6 opacity-0 group-hover:opacity-100"
+          @click="openLink(member.linkedInURL)"
+        >
+          <p class="text-blue-500 text-lg font-bold">in</p>
+        </button>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="pt-16 pb-36 px-6 sm:xl:px-44 bg-gray-50">
     <div class="w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-x-14 gap-y-16">

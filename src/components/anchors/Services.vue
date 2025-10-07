@@ -107,7 +107,7 @@ const services: Services[] = [
 </script>
 
 <template>
-  <div class="pt-36 pb-10 px-6 sm:px-[85px] flex flex-col space-y-24">
+  <section id="services" class="pt-36 pb-10 px-6 sm:px-[85px] flex flex-col space-y-24">
     <div class="flex flex-col items-center space-y-4">
       <p class="text-4xl font-bold text-gray-800">Professional PC Support Services</p>
 
@@ -117,7 +117,10 @@ const services: Services[] = [
     </div>
 
     <div class="grid grid-cols-1 sm:xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-8">
-      <div v-for="service in services" class="p-6 bg-white rounded-md border border-gray-200 shadow-md relative">
+      <div 
+        v-for="service in services"
+        class="p-6 bg-white rounded-md border border-gray-200 shadow-md relative transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl"
+      >
         <div class="flex flex-col items-start space-y-4">
           <div class="size-16 bg-teal-100 rounded-md grid place-items-center">
             <component :is="service.icon" class="size-8 stroke-teal-500" />
@@ -147,5 +150,5 @@ const services: Services[] = [
         Need specialized assistance? Contact our experts for tailored solutions.
       </p>
     </div>
-  </div>
+  </section>
 </template>

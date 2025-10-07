@@ -5,7 +5,7 @@ import BaseButton from '../BaseButton.vue';
 </script>
 
 <template>
-  <div class="pt-12 px-6 sm:px-0 pb-36 space-y-24">
+  <section id="contact" class="pt-12 px-6 sm:px-0 pb-36 space-y-24">
     <div class="flex flex-col items-center space-y-4">
       <p class="text-4xl font-bold text-gray-800">Get in Touch</p>
 
@@ -48,5 +48,5 @@ import BaseButton from '../BaseButton.vue';
         <BaseButton class="w-full justify-center">Send Message</BaseButton>
       </div>
     </div>
-  </div>
+  </section>
 </template>

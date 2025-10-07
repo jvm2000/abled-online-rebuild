@@ -3,7 +3,7 @@ import BaseButton from '../BaseButton.vue';
 </script>
 
 <template>
-  <div class="py-28 w-full flex flex-col items-center space-y-8 relative px-6 sm:px-0">
+  <section id="home" class="py-28 w-full flex flex-col items-center space-y-8 relative px-6 sm:px-0">
     <p class="text-6xl sm:text-7xl text-white font-bold text-left sm:text-center z-10">
       Empowering <br> <span class="gradient-text">PC Support Services</span>
     </p>
@@ -17,7 +17,7 @@ import BaseButton from '../BaseButton.vue';
         <span class="text-base px-4">Request Support</span>
       </BaseButton>
 
-      <button class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-white bg-white font-medium">
+      <button class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-white bg-white font-medium hover:scale-105 transition-transform duration-300 ease-in-out">
         <span class="text-base">Learn More</span>
       </button>
     </div>
@@ -55,7 +55,7 @@ import BaseButton from '../BaseButton.vue';
       <source src="/videos/loop.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  </div>
+  </section>
 </template>
 
 <style scoped>
