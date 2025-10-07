@@ -32,6 +32,16 @@ const coreValues: CoreValues[] = [
     iconColor: 'stroke-red-500'
   }
 ]
+
+function scrollToSection(sectionId: string) {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
 </script>
 
 <template>
@@ -124,11 +134,14 @@ const coreValues: CoreValues[] = [
       </p>
 
       <div class="flex items-center gap-4 pt-4">
-        <BaseButton>
+        <BaseButton @click="scrollToSection('contact')">
           <span class="text-base px-4">Get Support</span>
         </BaseButton>
 
-        <button class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-gray-800 bg-white font-medium hover:scale-105 transition-transform duration-300 ease-in-out">
+        <button 
+          class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-gray-800 bg-white font-medium hover:scale-105 transition-transform duration-300 ease-in-out"
+          @click="scrollToSection('our-team')"
+        >
           <span class="text-base">Meet our Team</span>
         </button>
       </div>

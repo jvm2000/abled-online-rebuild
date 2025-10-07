@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+import { Bars3Icon } from '@heroicons/vue/20/solid'
 import { EnvelopeIcon, PhoneIcon, ClockIcon, MapPinIcon } from '@heroicons/vue/24/outline'
 import { ref } from 'vue'
 import BaseButton from '../components/BaseButton.vue'
@@ -44,7 +46,54 @@ function scrollToSection(sectionId: string) {
         </button>
       </div>
 
-      <BaseButton class="hidden sm:lg:block">Get Support</BaseButton>
+      <BaseButton 
+        class="hidden sm:lg:block"
+        @click="scrollToSection('contact')"
+      >Get Support</BaseButton>
+
+      <Menu as="div" class="relative inline-block text-left lg:hidden">
+        <div>
+          <MenuButton
+            class="inline-flex w-full justify-center rounded-md"
+          >
+            <Bars3Icon
+              class="size-5 text-teal-600 hover:text-teal-500"
+              aria-hidden="true"
+            />
+          </MenuButton>
+        </div>
+
+        <transition
+          enter-active-class="transition duration-100 ease-out"
+          enter-from-class="transform scale-95 opacity-0"
+          enter-to-class="transform scale-100 opacity-100"
+          leave-active-class="transition duration-75 ease-in"
+          leave-from-class="transform scale-100 opacity-100"
+          leave-to-class="transform scale-95 opacity-0"
+        >
+          <MenuItems
+            class="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+          >
+            <div class="px-4 py-2.5">
+              <MenuItem 
+                v-for="page in pageList"
+                :key="page.name"
+                v-slot="{ active }"
+                @click="scrollToSection(page.path)"
+              >
+                <button
+                  :class="[
+                    active ? 'bg-teal-600 text-white' : 'text-gray-900',
+                    'group flex w-full items-center rounded-md px-4 py-2 text-base capitalize',
+                  ]"
+                >
+                  {{ page.name }}
+                </button>
+              </MenuItem>
+            </div>
+          </MenuItems>
+        </transition>
+      </Menu>
     </header>
 
     <main class="mt-15 sm:mt-14 z-[1]">

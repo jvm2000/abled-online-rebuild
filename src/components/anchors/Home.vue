@@ -1,5 +1,15 @@
 <script setup lang="ts">
-import BaseButton from '../BaseButton.vue';
+import BaseButton from '../BaseButton.vue'
+
+function scrollToSection(sectionId: string) {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
 </script>
 
 <template>
@@ -13,11 +23,14 @@ import BaseButton from '../BaseButton.vue';
     </p>
 
     <div class="flex items-center gap-4 z-10">
-      <BaseButton>
+      <BaseButton @click="scrollToSection('contact')">
         <span class="text-base px-4">Request Support</span>
       </BaseButton>
 
-      <button class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-white bg-white font-medium hover:scale-105 transition-transform duration-300 ease-in-out">
+      <button 
+        class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-white bg-white font-medium hover:scale-105 transition-transform duration-300 ease-in-out"
+        @click="scrollToSection('services')"
+      >
         <span class="text-base">Learn More</span>
       </button>
     </div>
