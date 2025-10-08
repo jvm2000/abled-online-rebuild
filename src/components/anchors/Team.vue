@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { StarIcon } from '@heroicons/vue/24/solid'
+
 type TeamMembers = {
   name: string,
   position: string,
@@ -68,10 +70,10 @@ function openLink(url: string) {
 <template>
   <section id="our-team" class="py-10 px-6 sm:xl:px-44 space-y-12 bg-gray-50">
     <div class="flex flex-col items-start space-y-6">
-      <p class="text-5xl text-black font-bold">Meet Our <br> <span class="text-teal-500">Team</span></p>
+      <h1 class="text-5xl text-black font-bold sm:max-w-xl">Meet Our <span class="text-teal-500">Team</span></h1>
 
-      <p class="text-lg lg:text-xl text-black">
-        Our passionate and dedicated team brings together a diverse range of skills and <br class="hidden lg:block">expertise to deliver exceptional results.
+      <p class="text-lg lg:text-xl text-black sm:max-w-4xl">
+        Our passionate and dedicated team brings together a diverse range of skills and expertise to deliver exceptional results.
       </p>
     </div>
 
@@ -114,9 +116,9 @@ function openLink(url: string) {
           <p class="text-base text-teal-600 font-medium">Our Culture</p>
         </div>
 
-        <p class="text-4xl font-bold text-black">
-          Built on Collaboration & <br class="hidden sm:block">Innovation
-        </p>
+        <h1 class="text-4xl font-bold text-black sm:max-w-xl">
+          Built on Collaboration & Innovation
+        </h1>
 
         <p class="text-base text-black">
           At Abled Online, we foster a culture of continuous learning and collaboration. Our team thrives on solving complex technical challenges and delivering solutions that exceed expectations.
@@ -134,7 +136,7 @@ function openLink(url: string) {
           <p class="text-sm text-black">Remote Support</p>
         </div>
 
-        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-28">
+        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
           <p class="text-3xl font-bold text-red-500">50+</p>
 
           <p class="text-sm text-black">Certifications</p>
@@ -146,8 +148,12 @@ function openLink(url: string) {
           <p class="text-sm text-black">Industries Served</p>
         </div>
 
-        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-28">
-          <p class="text-3xl font-bold text-teal-600">4.9</p>
+        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
+          <div class="flex items-center space-x-1">
+            <p class="text-3xl font-bold text-teal-600">4.9</p>
+            
+            <StarIcon class="fill-teal-600 size-4" />
+          </div>
 
           <p class="text-sm text-black">Average Rating</p>
         </div>

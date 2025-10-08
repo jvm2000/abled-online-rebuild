@@ -20,7 +20,7 @@ function setFavicon(href: string) {
 
 onMounted(() => {
   setTitle(null)
-  setFavicon('/icons/favicon.png')
+  setFavicon('/icons/favicon.ico')
 })
 </script>
 

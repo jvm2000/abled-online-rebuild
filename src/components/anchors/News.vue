@@ -6,12 +6,12 @@ import ReadMore from '../modal/ReadMore.vue';
 <template>
   <section id="news" class="py-12 flex flex-col items-center w-full px-6 lg:px-0">
     <div class="flex flex-col items-start space-y-6">
-      <p class="text-5xl sm:text-7xl font-bold text-black">
-        Recognized for <span class="text-teal-600">Inclusive</span> <br class="hidden lg:block"> Excellence
-      </p>
+      <h1 class="text-5xl sm:text-7xl font-bold text-black sm:max-w-2xl">
+        Recognized for <span class="text-teal-600">Inclusive</span> Excellence
+      </h1>
 
-      <p class="text-2xl text-black font-medium">
-        We are dedicated to fostering an environment where everyone can thrive <br class="hidden lg:block"> and succeed.
+      <p class="text-2xl text-black font-medium sm:max-w-3xl">
+        We are dedicated to fostering an environment where everyone can thrive and succeed.
       </p>
     </div>
   </section>
@@ -40,7 +40,7 @@ import ReadMore from '../modal/ReadMore.vue';
         </p>
 
         <ReadMore>
-          <button class="px-4 py-2.5 border border-gray-200 flex items-center space-x-4 rounded-md">
+          <button class="px-4 py-2.5 border border-gray-200 flex items-center space-x-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out hover:border-gray-600">
             <p class="text-sm text-black">Read More</p>
 
             <ArrowRightIcon class="size-3 stroke-black" />

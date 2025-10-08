@@ -112,6 +112,8 @@ function scrollToSection(sectionId: string) {
       behavior: 'smooth',
       block: 'start'
     })
+
+    history.replaceState(null, '', `#${sectionId}`)
   }
 }
 </script>
@@ -119,15 +121,15 @@ function scrollToSection(sectionId: string) {
 <template>
   <section id="services" class="pt-24 pb-16 flex flex-col space-y-12">
     <div class="w-full py-12 bg-teal-500 flex flex-col items-center space-y-6 px-6 lg:px-0">
-      <p class="text-6xl font-bold text-white">Professional PC Support Services</p>
+      <h1 class="text-6xl font-bold text-white">Professional PC Support Services</h1>
 
-      <p class="lg:text-center text-lg md:text-2xl text-white">
-        Comprehensive technical solutions delivered by certified professionals. From hardware <br class="hidden lg:block"> repairs to cybersecurity, we provide reliable support for all your computing needs.
+      <p class="lg:text-center text-lg md:text-2xl text-white max-w-full sm:max-w-4xl">
+        Comprehensive technical solutions delivered by certified professionals. We provide reliable support for all your computing needs.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-8 px-6 sm:px-[85px]">
-      <div 
+    <ul class="grid grid-cols-1 sm:xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-4 px-6 sm:px-[85px]">
+      <li 
         v-for="service in services"
         class="p-6 bg-white rounded-md border border-gray-200 shadow-md relative transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl"
       >
@@ -148,8 +150,8 @@ function scrollToSection(sectionId: string) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
 
     <div class="flex flex-col items-center space-y-4 px-6 sm:px-0">
       <BaseButton class="px-8" @click="scrollToSection('contact')">

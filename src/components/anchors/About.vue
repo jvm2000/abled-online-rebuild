@@ -47,10 +47,10 @@ function scrollToSection(sectionId: string) {
 <template>
   <section id="about" class="pt-12">
     <div class="flex flex-col items-center space-y-4 py-10 px-6 sm:px-0">
-      <p class="text-4xl font-bold text-black">Our Story</p>
+      <h1 class="text-4xl font-bold text-black">About Us</h1>
 
-      <p class="text-black text-lg lg:text-xl sm:text-center">
-        A journey of innovation, dedication, and empowering communities through exceptional <br class="hidden lg:block"> technical support
+      <p class="text-black text-lg lg:text-xl sm:text-center max-w-full sm:max-w-3xl">
+        A journey of innovation, dedication, and empowering communities through exceptional technical support
       </p>
     </div>
   </section>
@@ -127,10 +127,8 @@ function scrollToSection(sectionId: string) {
     <div class="w-full flex flex-col px-6 lg:px-0 items-center py-16 rounded-md border border-teal-300 bg-gradient-to-r from-teal-100 via-pink-300/20 to-teal-100/50 space-y-4 ">
       <p class="text-3xl font-bold text-black">Join Us on Our Journey</p>
 
-      <p class="text-lg text-center text-black">
-        We're always looking for talented individuals and organizations to partner with. <br class="hidden lg:block"> 
-        Whether you need exceptional PC support or want to be part of our growing team, <br class="hidden lg:block"> 
-        let's connect.
+      <p class="text-lg text-center text-black sm:max-w-2xl">
+        We're always looking for talented individuals and organizations to partner with. Whether you need exceptional PC support or want to be part of our growing team, let's connect.
       </p>
 
       <div class="flex items-center gap-4 pt-4">

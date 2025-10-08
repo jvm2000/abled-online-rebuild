@@ -26,6 +26,8 @@ function scrollToSection(sectionId: string) {
       behavior: 'smooth',
       block: 'start'
     })
+
+    history.replaceState(null, '', `#${sectionId}`)
   }
 }
 
@@ -59,15 +61,15 @@ onUnmounted(() => {
 
 <template>
   <div class="relative min-h-screen">
-    <header class="flex items-center justify-between border-b px-6 sm:lg:px-[85px] py-0 w-full bg-white fixed top-0 z-[40]">
-      <img src="/images/logo.png" alt="Logo" class="h-24 sm:h-32">
+    <header class="flex items-center justify-between border-b px-6 sm:lg:px-[85px] py-4 w-full bg-white fixed top-0 z-[40]">
+      <img src="/images/logo.png" alt="Logo" class="h-14 lg:h-20">
 
       <div class="hidden sm:flex items-center space-x-8">
         <button
           v-for="page in pageList"
           :key="page.name"
           :class="[
-            'text-lg lg:text-xl font-semibold capitalize transition-colors duration-300',
+            'text-lg font-semibold capitalize transition-colors duration-300',
             activeSection === page.path
               ? 'text-teal-600'
               : 'text-black hover:text-teal-600'
@@ -111,7 +113,7 @@ onUnmounted(() => {
                 <button
                   :class="[
                     active ? 'bg-teal-600 text-white' : 'text-gray-900',
-                    'group flex w-full items-center rounded-md px-4 py-2 text-base capitalize',
+                    'flex w-full items-center rounded-md px-4 py-2 text-base capitalize',
                   ]"
                 >
                   {{ page.name }}
@@ -123,7 +125,7 @@ onUnmounted(() => {
       </Menu>
     </header>
 
-    <main class="mt-15 sm:mt-24 z-[1]">
+    <main class="mt-15 lg:mt-16 z-[1]">
       <slot />
     </main>
 

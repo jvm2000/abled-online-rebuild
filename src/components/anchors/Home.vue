@@ -4,18 +4,17 @@ import BaseButton from '../BaseButton.vue'
 function scrollToSection(sectionId: string) {
   const element = document.getElementById(sectionId)
   if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    
+    history.replaceState(null, '', `#${sectionId}`)
   }
 }
 </script>
 
 <template>
   <section id="home" class="pt-44 sm:pt-28 py-28 w-full flex flex-col items-center space-y-8 relative px-6 sm:px-0">
-    <p class="text-6xl sm:text-7xl text-white font-bold text-left sm:text-center z-10">
-      Empowering <br> <span class="gradient-text">PC Support Services</span>
+    <p class="text-6xl sm:text-7xl text-white font-bold text-left sm:text-center z-10 sm:max-w-5xl">
+      Empowering Communities <span class="gradient-text">Delivering Global PC Support</span>
     </p>
 
     <p class="text-lg sm:lg:text-2xl text-white sm:max-w-3xl text-left sm:text-center z-10">
