@@ -17,7 +17,7 @@ function scrollToSection(sectionId: string) {
       Empowering Communities <span class="gradient-text">Delivering Global PC Support</span>
     </p>
 
-    <p class="text-lg sm:lg:text-2xl text-white sm:max-w-3xl text-left sm:text-center z-10">
+    <p class="text-lg sm:lg:text-2xl text-white sm:max-w-2xl text-left sm:text-center z-10">
       Delivering comprehensive technical solutions with 24/7 professional support. We empower individuals and businesses with reliable, expert PC services.
     </p>
 
@@ -43,14 +43,7 @@ function scrollToSection(sectionId: string) {
       <div class="h-8 w-px border" />
 
       <div class="flex flex-col items-center">
-        <p class="text-3xl text-white font-bold">1000+</p>
-        <p class="text-base text-white">Clients</p>
-      </div>
-
-      <div class="h-8 w-px border" />
-
-      <div class="flex flex-col items-center">
-        <p class="text-3xl text-white font-bold">99%</p>
+        <p class="text-3xl text-white font-bold">100%</p>
         <p class="text-base text-white">Satisfaction</p>
       </div>
     </div>

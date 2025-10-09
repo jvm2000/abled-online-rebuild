@@ -33,16 +33,6 @@ const services: Services[] = [
       'Tailored Solutions'
     ]
   }, {
-    name: 'Download & Installation of App',
-    description: 'Our Download & Installation Services provide a seamless setup of your applications. We manage everything from downloading to installing software on your devices, ensuring it’s correctly configured and ready to use.',
-    icon: CloudArrowDownIcon,
-    items: [
-      'Seamless application setup',
-      'Software downloading',
-      'Installation on devices',
-      'Ready-to-use applications'
-    ]
-  }, {
     name: 'VOIP Application Setup',
     description: 'Our VOIP Application Setup services ensure efficient installation of your voice-over-IP applications. We manage everything from initial configuration to final testing, ensuring your communication systems are fully operational.',
     icon: PhoneIcon,
@@ -128,30 +118,32 @@ function scrollToSection(sectionId: string) {
       </p>
     </div>
 
-    <ul class="grid grid-cols-1 sm:xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-4 px-6 sm:px-[85px]">
-      <li 
-        v-for="service in services"
-        class="p-6 bg-white rounded-md border border-gray-200 shadow-md relative transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl"
-      >
-        <div class="flex flex-col items-start space-y-4">
-          <div class="size-24 bg-teal-100 rounded-md grid place-items-center">
-            <component :is="service.icon" class="size-14 stroke-teal-500" />
-          </div>
+    <div class="flex justify-center">
+      <ul class="flex flex-wrap justify-center gap-4 px-6 sm:px-[85px]">
+        <li 
+          v-for="service in services"
+          class="p-6 bg-white rounded-md border border-gray-200 shadow-md relative transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl max-w-[435px]"
+        >
+          <div class="flex flex-col items-start space-y-4">
+            <div class="size-24 bg-teal-100 rounded-md grid place-items-center">
+              <component :is="service.icon" class="size-14 stroke-teal-500" />
+            </div>
 
-          <p class="text-xl font-medium text-black">{{ service.name}}</p>
+            <p class="text-xl font-medium text-black">{{ service.name}}</p>
 
-          <p class="text-base text-black">{{ service.description }}</p>
+            <p class="text-base text-black">{{ service.description }}</p>
 
-          <div class="flex flex-col items-start space-y-1">
-            <div v-for="item in service.items" class="flex items-center space-x-2">
-              <span class="size-2 bg-teal-500 rounded-full" />
+            <div class="flex flex-col items-start space-y-1">
+              <div v-for="item in service.items" class="flex items-center space-x-2">
+                <span class="size-2 bg-teal-500 rounded-full" />
 
-              <p class="text-base text-black capitalize">{{ item }}</p>
+                <p class="text-base text-black capitalize">{{ item }}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
 
     <div class="flex flex-col items-center space-y-4 px-6 sm:px-0">
       <BaseButton class="px-8" @click="scrollToSection('contact')">

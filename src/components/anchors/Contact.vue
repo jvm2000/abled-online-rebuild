@@ -13,6 +13,37 @@ const contactForm = ref<ContactForm>({
   email: '',
   message: ''
 })
+const loading = ref(false)
+const hasSubmitted = ref(false)
+const error = ref<string[]>([])
+
+async function submitContact() {
+  loading.value = true
+
+  try {
+    const formData = new FormData()
+    formData.append('Full Name', contactForm.value.full_name)
+    formData.append('Email', contactForm.value.email)
+    formData.append('Message', contactForm.value.message)
+
+    const response = await fetch('https://abledonline.com/wp-admin/admin-ajax.php', {
+      method: 'POST',
+      body: formData,
+    })
+
+    const result = await response.text()
+
+    if (response.ok && result.includes('success')) {
+      hasSubmitted.value = true
+    } else {
+      throw new Error(result || 'Something went wrong')
+    }
+  } catch (err: any) {
+    error.value = err.message
+  } finally {
+    loading.value = false
+  }
+}
 </script>
 
 <template>
@@ -58,11 +89,11 @@ const contactForm = ref<ContactForm>({
             v-model="contactForm.message"
             id="message"
             class="text-sm bg-inherit ring-1 ring-gray-300 focus:ring-1 focus:ring-gray-800 rounded-sm w-full py-2.5 px-4 h-36"
-            placeholder="your.email@example.com"
+            placeholder="Your message"
           />
         </div>
         
-        <BaseButton class="w-full justify-center">Send Message</BaseButton>
+        <BaseButton class="w-full justify-center" @click="submitContact">Send Message</BaseButton>
       </div>
     </div>
   </section>

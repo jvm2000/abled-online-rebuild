@@ -129,8 +129,8 @@ onUnmounted(() => {
       <slot />
     </main>
 
-    <footer class="px-6 sm:xl:px-24 pt-16 pb-8 bg-black w-full space-y-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 sm:lg:grid-cols-3 items-start border-b pb-12 border-gray-700">
+    <footer class="px-6 sm:xl:px-24 py-8 bg-black w-full space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 sm:lg:grid-cols-3 items-start border-b pb-6 border-gray-700">
         <div class="flex flex-col items-start space-y-6">
           <div class="relative">
             <img src="/images/logo.png" alt="Logo" class="h-16 sm:h-20">
@@ -158,42 +158,42 @@ onUnmounted(() => {
           <div class="flex items-center space-x-4">
             <EnvelopeIcon class="size-6 stroke-teal-600" />
 
-            <div class="flex flex-col items-start">
-              <p class="text-base font-medium text-white">Email</p>
-              <p class="text-sm text-white">abledonline@genashtim.com</p>
+            <div class="flex flex-col xl:flex-row xl:items-center xl:space-x-2">
+              <p class="text-sm text-white">Email:</p>
+              <p class="text-sm text-teal-200">abledonline@genashtim.com</p>
             </div>
           </div>
 
           <div class="flex items-center space-x-4">
             <PhoneIcon class="size-6 stroke-teal-600" />
 
-            <div class="flex flex-col items-start">
-              <p class="text-base font-medium text-white">Phone</p>
-              <p class="text-sm text-white">+61 7 5660 6741</p>
+            <div class="flex flex-col xl:flex-row xl:items-center xl:space-x-2">
+              <p class="text-sm text-white">Phone:</p>
+              <p class="text-sm text-teal-200">+61 7 5660 6741</p>
             </div>
           </div>
 
           <div class="flex items-center space-x-4">
             <ClockIcon class="size-6 stroke-teal-600" />
 
-            <div class="flex flex-col items-start">
-              <p class="text-base font-medium text-white">Hours</p>
-              <p class="text-sm text-white">24/7 Support Available</p>
+            <div class="flex flex-col xl:flex-row xl:items-center xl:space-x-2">
+              <p class="text-sm text-white">Hours:</p>
+              <p class="text-sm text-teal-200">24/7 Support Available</p>
             </div>
           </div>
 
           <div class="flex items-center space-x-4">
             <MapPinIcon class="size-6 stroke-teal-600" />
 
-            <div class="flex flex-col items-start">
-              <p class="text-base font-medium text-white">Address</p>
-              <p class="text-sm text-white">1 Coleman Street #10-10 The Adelphi Singapore 179803</p>
+            <div class="flex flex-col xl:flex-row xl:items-center xl:space-x-2">
+              <p class="text-sm font-medium text-white">Address:</p>
+              <p class="text-sm text-teal-200 xl:whitespace-nowrap">1 Coleman Street #10-10 The Adelphi Singapore 179803</p>
             </div>
           </div>
         </div>
       </div>
 
-      <p class="text-sm text-gray-200">© 2025 Abled Online. All rights reserved.</p>
+      <p class="text-sm text-gray-200 w-full text-center">© 2025 Abled Online. All rights reserved.</p>
     </footer>
   </div>
 </template>

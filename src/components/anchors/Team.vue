@@ -82,7 +82,7 @@ function openLink(url: string) {
         <div
           v-for="member in members"
           :key="member.name"
-          class="relative overflow-hidden rounded-md h-72 w-64 flex-none transition-all duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl group"
+          class="relative overflow-hidden rounded-md h-72 w-full sm:w-64 flex-none transition-all duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl group"
         >
           <img
             :src="member.image"
@@ -110,13 +110,13 @@ function openLink(url: string) {
   </section>
 
   <div class="pt-6 pb-12 px-6 sm:xl:px-44 bg-gray-50">
-    <div class="w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-x-14 gap-y-16">
+    <div class="w-full">
       <div class="flex flex-col items-start space-y-8">
         <div class="px-5 py-1.5 bg-teal-100 rounded-full">
           <p class="text-base text-teal-600 font-medium">Our Culture</p>
         </div>
 
-        <h1 class="text-4xl font-bold text-black sm:max-w-xl">
+        <h1 class="text-4xl font-bold text-black">
           Built on Collaboration & Innovation
         </h1>
 
@@ -127,36 +127,6 @@ function openLink(url: string) {
         <p class="text-base text-black">
           We believe in transparency, accountability, and building long-term relationships with our clients through exceptional service and technical excellence.
         </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 items-end gap-8">
-        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
-          <p class="text-3xl font-bold text-teal-500">100%</p>
-
-          <p class="text-sm text-black">Remote Support</p>
-        </div>
-
-        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
-          <p class="text-3xl font-bold text-red-500">50+</p>
-
-          <p class="text-sm text-black">Certifications</p>
-        </div>
-
-        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
-          <p class="text-3xl font-bold text-green-500">10+</p>
-
-          <p class="text-sm text-black">Industries Served</p>
-        </div>
-
-        <div class="rounded-md bg-white shadow p-6 flex flex-col items-start space-y-2 h-40">
-          <div class="flex items-center space-x-1">
-            <p class="text-3xl font-bold text-teal-600">4.9</p>
-            
-            <StarIcon class="fill-teal-600 size-4" />
-          </div>
-
-          <p class="text-sm text-black">Average Rating</p>
-        </div>
       </div>
     </div>
   </div>

@@ -123,27 +123,6 @@ function scrollToSection(sectionId: string) {
         </div>
       </div>
     </div>
-
-    <div class="w-full flex flex-col px-6 lg:px-0 items-center py-16 rounded-md border border-teal-300 bg-gradient-to-r from-teal-100 via-pink-300/20 to-teal-100/50 space-y-4 ">
-      <p class="text-3xl font-bold text-black">Join Us on Our Journey</p>
-
-      <p class="text-lg text-center text-black sm:max-w-2xl">
-        We're always looking for talented individuals and organizations to partner with. Whether you need exceptional PC support or want to be part of our growing team, let's connect.
-      </p>
-
-      <div class="flex items-center gap-4 pt-4">
-        <BaseButton @click="scrollToSection('contact')">
-          <span class="text-base px-4">Get Support</span>
-        </BaseButton>
-
-        <button 
-          class="flex items-center px-8 py-2.5 text-sm rounded-md ring-1 ring-black bg-white font-medium hover:scale-105 transition-transform duration-300 ease-in-out"
-          @click="scrollToSection('our-team')"
-        >
-          <span class="text-base">Meet our Team</span>
-        </button>
-      </div>
-    </div>
   </div>
 
   <div class="py-6 px-6 sm:px-0">
@@ -164,8 +143,8 @@ function scrollToSection(sectionId: string) {
         class="transition-all duration-500 ease-in-out hover:-translate-y-4"
       >
         <div class="flex flex-col items-center space-y-6">
-          <div :class="`size-24 ${core.bgColor} rounded-full grid place-items-center`">
-            <component :is="core.icon" :class="`size-14 ${core.iconColor}`" />
+          <div class="size-24 bg-green-100 rounded-full grid place-items-center">
+            <component :is="core.icon" :class="`size-14 stroke-green-600`" />
           </div>
 
           <p class="text-lg text-black lg:text-center">{{core.description}}</p>
