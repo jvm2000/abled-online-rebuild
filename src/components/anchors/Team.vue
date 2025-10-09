@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { StarIcon } from '@heroicons/vue/24/solid'
-
 type TeamMembers = {
   name: string,
   position: string,

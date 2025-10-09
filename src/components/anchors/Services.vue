@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ComputerDesktopIcon, VideoCameraIcon, CloudArrowDownIcon, PhoneIcon, EnvelopeIcon, DevicePhoneMobileIcon, ServerIcon, ShieldCheckIcon, ArrowPathIcon } from '@heroicons/vue/24/outline'
+import { ComputerDesktopIcon, VideoCameraIcon, PhoneIcon, EnvelopeIcon, DevicePhoneMobileIcon, ServerIcon, ShieldCheckIcon, ArrowPathIcon } from '@heroicons/vue/24/outline'
 import type { Component } from 'vue'
 import BaseButton from '../BaseButton.vue'
 

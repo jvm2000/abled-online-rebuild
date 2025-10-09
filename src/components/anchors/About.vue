@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
 import { LightBulbIcon, GlobeAltIcon, TrophyIcon } from '@heroicons/vue/24/outline'
-import BaseButton from '../BaseButton.vue'
 
 type CoreValues = {
   title: string,
@@ -32,16 +31,6 @@ const coreValues: CoreValues[] = [
     iconColor: 'stroke-red-500'
   }
 ]
-
-function scrollToSection(sectionId: string) {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  }
-}
 </script>
 
 <template>
