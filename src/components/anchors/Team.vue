@@ -91,7 +91,7 @@ function openLink(url: string) {
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent transition-opacity duration-500 ease-in-out" /> <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100" />
           </div>
 
-          <div class="flex flex-col items-start p-2 absolute bottom-4 left-4">
+          <div class="flex flex-col items-start p-2 absolute bottom-4 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
             <p class="text-xl text-white font-semibold">{{ member.name }}</p>
             <p class="text-base text-white">{{ member.position }}</p>
           </div>
