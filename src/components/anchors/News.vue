@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { CalendarIcon, ArrowRightIcon } from '@heroicons/vue/24/outline'
-import ReadMore from '../modal/ReadMore.vue';
+import { useRouter } from 'vue-router'  
+
+const router = useRouter()
 </script>
 
 <template>
   <section id="news" class="py-12 flex flex-col items-center w-full px-6 lg:px-0">
     <div class="flex flex-col items-start space-y-6">
-      <h1 class="text-5xl sm:text-7xl font-bold text-black sm:max-w-2xl">
+      <h1 class="text-5xl sm:text-7xl font-bold text-black sm:max-w-2xl text-center">
         Recognized for <span class="text-teal-600">Inclusive</span> Excellence
       </h1>
 
-      <p class="text-2xl text-black font-medium sm:max-w-3xl">
+      <p class="text-2xl text-black font-medium sm:max-w-3xl text-center">
         We are dedicated to fostering an environment where everyone can thrive and succeed.
       </p>
     </div>
@@ -39,13 +41,11 @@ import ReadMore from '../modal/ReadMore.vue';
           Genashtin's executive Ryan Allegado "walked away" with the first prize for Abled Online, at the finals of the Universal Ventures Business Plan Contest (UVC) in Tokyo on 21st November 2010.
         </p>
 
-        <ReadMore>
-          <button class="px-4 py-2.5 border border-gray-200 flex items-center space-x-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out hover:border-gray-600">
-            <p class="text-sm text-black">Read More</p>
+        <button @click="router.push('news')" class="px-4 py-2.5 border border-gray-200 flex items-center space-x-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out hover:border-gray-600">
+          <p class="text-sm text-black">Read More</p>
 
-            <ArrowRightIcon class="size-3 stroke-black" />
-          </button>
-        </ReadMore>
+          <ArrowRightIcon class="size-3 stroke-black" />
+        </button>
       </div>
     </div>
   </div>

@@ -62,7 +62,7 @@ onUnmounted(() => {
 <template>
   <div class="relative min-h-screen">
     <header class="flex items-center justify-between border-b px-6 sm:lg:px-[85px] py-4 w-full bg-white fixed top-0 z-[40]">
-      <img src="/images/logo.png" alt="Logo" class="h-14 lg:h-20">
+      <img src="/images/logo.png" alt="Logo" class="h-14">
 
       <div class="hidden sm:flex items-center space-x-8">
         <button
@@ -125,7 +125,7 @@ onUnmounted(() => {
       </Menu>
     </header>
 
-    <main class="mt-15 lg:mt-16 z-[1]">
+    <main class="mt-14 z-[1]">
       <slot />
     </main>
 

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import IndexPage from '../pages/index.vue'
+import News from '../pages/news.vue'
 
 const routes = [
   {
@@ -7,8 +8,7 @@ const routes = [
     name: 'Home',
     component: IndexPage
   },
-  // Add more pages like:
-  // { path: '/about', name: 'About', component: AboutPage }
+  { path: '/news', name: 'News', component: News }
 ]
 
 const router = createRouter({
