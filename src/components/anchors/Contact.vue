@@ -15,34 +15,39 @@ const contactForm = ref<ContactForm>({
 })
 const loading = ref(false)
 const hasSubmitted = ref(false)
-const error = ref<string[]>([])
+const errors = ref<string[]>([])
 
 async function submitContact() {
+  errors.value = []
   loading.value = true
 
-  try {
-    const formData = new FormData()
-    formData.append('Full Name', contactForm.value.full_name)
-    formData.append('Email', contactForm.value.email)
-    formData.append('Message', contactForm.value.message)
-
-    const response = await fetch('https://abledonline.com/wp-admin/admin-ajax.php', {
-      method: 'POST',
-      body: formData,
+  const response = await fetch('http://localhost:8000/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: contactForm.value.full_name,
+      email: contactForm.value.email,
+      message: contactForm.value.message
     })
+  })
 
-    const result = await response.text()
+  const result = await response.json()
+  console.log('Result:', result)
 
-    if (response.ok && result.includes('success')) {
-      hasSubmitted.value = true
-    } else {
-      throw new Error(result || 'Something went wrong')
-    }
-  } catch (err: any) {
-    error.value = err.message
-  } finally {
-    loading.value = false
+  if (result.success) {
+    hasSubmitted.value = true
+  } else {
+    errors.value = result.errors
   }
+
+  loading.value = false
+}
+
+function getError(errors: Record<string, string[]>, field: string): any | null {
+  if (errors && errors[field] && errors[field].length > 0) {
+    return errors[field][0];
+  }
+  return null;
 }
 </script>
 
@@ -65,9 +70,14 @@ async function submitContact() {
             id="full-name"
             v-model="contactForm.full_name"
             type="text" 
-            class="text-sm bg-inherit ring-1 ring-gray-300 focus:ring-1 focus:ring-gray-800 rounded-sm w-full py-2.5 px-4"
+            class="text-sm bg-inherit ring-1 rounded-sm w-full py-2.5 px-4"
+            :class="[getError(errors, 'name') ? 'ring-red-500 focus:ring-red-500' : 'ring-gray-300' ]"
             placeholder="Your name"
           >
+
+          <span v-if="getError(errors, 'name')" class="text-xs text-red-500">
+            {{ getError(errors, 'name') }}
+          </span>
         </div>
 
         <div class="justify-start space-y-2 w-full">
@@ -77,9 +87,14 @@ async function submitContact() {
             v-model="contactForm.email"
             id="email"
             type="email" 
-            class="text-sm bg-inherit ring-1 ring-gray-300 focus:ring-1 focus:ring-gray-800 rounded-sm w-full py-2.5 px-4"
+            class="text-sm bg-inherit ring-1 rounded-sm w-full py-2.5 px-4"
+            :class="[getError(errors, 'email') ? 'ring-red-500 active::ring-red-500' : 'ring-gray-300' ]"
             placeholder="your.email@example.com"
           >
+
+          <span v-if="getError(errors, 'email')" class="text-xs text-red-500">
+            {{ getError(errors, 'email') }}
+          </span>
         </div>
 
         <div class="justify-start space-y-2 w-full">
@@ -88,12 +103,21 @@ async function submitContact() {
           <textarea 
             v-model="contactForm.message"
             id="message"
-            class="text-sm bg-inherit ring-1 ring-gray-300 focus:ring-1 focus:ring-gray-800 rounded-sm w-full py-2.5 px-4 h-36"
+            class="text-sm bg-inherit ring-1 focus:ring-1 rounded-sm w-full py-2.5 px-4 h-36"
+            :class="[getError(errors, 'message') ? 'ring-red-500 focus:ring-red-500' : 'ring-gray-300' ]"
             placeholder="Your message"
           />
+
+          <span v-if="getError(errors, 'message')" class="text-xs text-red-500">
+            {{ getError(errors, 'message') }}
+          </span>
         </div>
         
-        <BaseButton class="w-full justify-center" @click="submitContact">Send Message</BaseButton>
+        <BaseButton 
+          class="w-full justify-center"
+          :loading="loading"
+          @click="submitContact"
+        >Send Message</BaseButton>
       </div>
     </div>
   </section>

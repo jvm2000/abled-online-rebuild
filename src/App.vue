@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Layout from './layouts/DefaultLayout.vue'
 import { onMounted } from 'vue'
 
 function setTitle(titleChunk: string | null) {
@@ -25,9 +24,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="app">
-    <Layout>
-      <router-view />
-    </Layout>
+  <div id="app" class="all-fonts">
+    <router-view />
   </div>
 </template>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.all-fonts {
+  font-family: 'Roboto', sans-serif;
+}
+</style>

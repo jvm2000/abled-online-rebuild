@@ -3,31 +3,62 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { Bars3Icon } from '@heroicons/vue/20/solid'
 import { EnvelopeIcon, PhoneIcon, ClockIcon, MapPinIcon } from '@heroicons/vue/24/outline'
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
 type Page = {
   name: string,
   path: string
 }
 
+const props = withDefaults(
+  defineProps<{
+    canPush?: boolean
+  }>(),
+  {
+    canPush: false
+  }
+)
+
+const router = useRouter()
+const route = useRoute()
 const pageList = ref<Page[]>([
   { name: 'home', path: 'home' },
   { name: 'about', path: 'about' },
   { name: 'services', path: 'services' },
-  { name: 'our team', path: 'our-team' },
   { name: 'news', path: 'news' },
   { name: 'contact', path: 'contact' }
 ])
 const activeSection = ref('home')
 
 function scrollToSection(sectionId: string) {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+  if (route.path !== '/') {
+    router.push({ path: '/', hash: `#${sectionId}` }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'instant',
+            block: 'start'
+          })
+        }
+      })
     })
+  }
+  
+  else {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
 
-    history.replaceState(null, '', `#${sectionId}`)
+    if (props.canPush) {
+      history.pushState(null, '', `#${sectionId}`)
+    } else {
+      history.replaceState(null, '', `#${sectionId}`)
+    }
   }
 }
 
@@ -62,7 +93,7 @@ onUnmounted(() => {
 <template>
   <div class="relative min-h-screen">
     <header class="flex items-center justify-between border-b px-6 sm:lg:px-[85px] py-4 w-full bg-white fixed top-0 z-[40]">
-      <img src="/images/logo.png" alt="Logo" class="h-14">
+      <img src="/images/logo.png" alt="Logo" class="h-16 sm:h-20">
 
       <div class="hidden sm:flex items-center space-x-8">
         <button
@@ -125,7 +156,7 @@ onUnmounted(() => {
       </Menu>
     </header>
 
-    <main class="mt-14 z-[1]">
+    <main class="mt-20 z-[1]">
       <slot />
     </main>
 

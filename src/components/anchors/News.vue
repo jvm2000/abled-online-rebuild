@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { CalendarIcon, ArrowRightIcon } from '@heroicons/vue/24/outline'
-import { useRouter } from 'vue-router'  
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
+
+function goToNews() {
+  router.push('/news').then(() => {
+    // Scroll instantly to top after route navigation
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  })
+}
 </script>
 
 <template>
   <section id="news" class="py-12 flex flex-col items-center w-full px-6 lg:px-0">
-    <div class="flex flex-col items-start space-y-6">
+    <div class="flex flex-col items-center space-y-6">
       <h1 class="text-5xl sm:text-7xl font-bold text-black sm:max-w-2xl text-center">
         Recognized for <span class="text-teal-600">Inclusive</span> Excellence
       </h1>
@@ -41,7 +48,10 @@ const router = useRouter()
           Genashtin's executive Ryan Allegado "walked away" with the first prize for Abled Online, at the finals of the Universal Ventures Business Plan Contest (UVC) in Tokyo on 21st November 2010.
         </p>
 
-        <button @click="router.push('news')" class="px-4 py-2.5 border border-gray-200 flex items-center space-x-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out hover:border-gray-600">
+        <button 
+          class="px-4 py-2.5 border border-gray-200 flex items-center space-x-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out hover:border-gray-600"
+          @click="goToNews" 
+        >
           <p class="text-sm text-black">Read More</p>
 
           <ArrowRightIcon class="size-3 stroke-black" />

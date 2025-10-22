@@ -4,19 +4,21 @@ import Contact from '../components/anchors/Contact.vue';
 import Home from '../components/anchors/Home.vue'
 import News from '../components/anchors/News.vue';
 import Services from '../components/anchors/Services.vue';
-import Team from '../components/anchors/Team.vue';
+import Layout from '../layouts/DefaultLayout.vue'
 </script>
 
 <template>
-  <Home />
+  <Layout>
+    <Home />
 
-  <About />
+    <About />
 
-  <Services />
+    <Services />
 
-  <Team />
+    <!-- <Team />  -->
 
-  <News />
+    <News />
 
-  <Contact />
+    <Contact />
+  </Layout>
 </template>
