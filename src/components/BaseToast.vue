@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'4
+import { ref } from 'vue'
 
 const visible = ref(false)
 const message = ref('')
