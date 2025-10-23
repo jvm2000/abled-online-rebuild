@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 import BaseButton from '../BaseButton.vue';
 import BaseToast from '../BaseToast.vue';
 
@@ -16,7 +16,7 @@ const contactForm = ref<ContactForm>({
 })
 const loading = ref(false)
 const toast = ref(null)
-const errors = ref<string[]>([])
+const errors = reactive<Record<string, string[]>>({});
 
 async function submitContact() {
   errors.value = []
@@ -39,7 +39,7 @@ async function submitContact() {
     contactForm.value.full_name = ''
     contactForm.value.message = ''
 
-    toast.value.showToast("We'll get back to you as soon as possible")
+    toast.value?.showToast("We'll get back to you as soon as possible")
   } else {
     errors.value = result.errors
   }
