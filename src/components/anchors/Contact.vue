@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import BaseButton from '../BaseButton.vue';
+import BaseToast from '../BaseToast.vue';
 
 type ContactForm = {
   full_name: string,
@@ -14,7 +15,7 @@ const contactForm = ref<ContactForm>({
   message: ''
 })
 const loading = ref(false)
-const hasSubmitted = ref(false)
+const toast = ref(null)
 const errors = ref<string[]>([])
 
 async function submitContact() {
@@ -32,10 +33,13 @@ async function submitContact() {
   })
 
   const result = await response.json()
-  console.log('Result:', result)
 
   if (result.success) {
-    hasSubmitted.value = true
+    contactForm.value.email = ''
+    contactForm.value.full_name = ''
+    contactForm.value.message = ''
+
+    toast.value.showToast("We'll get back to you as soon as possible")
   } else {
     errors.value = result.errors
   }
@@ -121,4 +125,6 @@ function getError(errors: Record<string, string[]>, field: string): any | null {
       </div>
     </div>
   </section>
+
+  <BaseToast ref="toast" />
 </template>
