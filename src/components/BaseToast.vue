@@ -1,6 +1,5 @@
- 
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'4
 
 const visible = ref(false)
 const message = ref('')
@@ -15,15 +14,15 @@ defineExpose({ showToast })
 </script>
  
  <template>
-    <transition name="toast-pop">
-      <div 
-        v-if="visible" 
-        class="fixed bottom-6 right-6 bg-white p-6 rounded-md shadow-lg  justify-start w-full max-w-sm flex flex-col"
-      >
-        <span class="text-black font-bold">Message Sent!</span>
-        <span class="text-sm text-black">{{ message }}</span>
-      </div>
-    </transition>
+  <transition name="toast-pop">
+    <div 
+      v-if="visible" 
+      class="fixed bottom-6 right-6 bg-white p-6 rounded-md shadow-lg  justify-start w-full max-w-sm flex flex-col"
+    >
+      <span class="text-black font-bold">Message Sent!</span>
+      <span class="text-sm text-black">{{ message }}</span>
+    </div>
+  </transition>
 </template>
 
 <style scoped>
