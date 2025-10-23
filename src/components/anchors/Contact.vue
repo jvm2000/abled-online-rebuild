@@ -15,7 +15,7 @@ const contactForm = ref<ContactForm>({
   message: ''
 })
 const loading = ref(false)
-const toast = ref(null)
+const toast = ref<InstanceType<typeof BaseToast> | null>(null)
 const errors = reactive<Record<string, string[]>>({});
 
 async function submitContact() {
