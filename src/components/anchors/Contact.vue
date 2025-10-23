@@ -42,14 +42,16 @@ async function submitContact() {
     toast.value?.showToast("We'll get back to you as soon as possible")
   } else {
     errors.value = result.errors
+
+    loading.value = false
   }
 
   loading.value = false
 }
 
-function getError(errors: Record<string, string[]>, field: string): any | null {
-  if (errors && errors[field] && errors[field].length > 0) {
-    return errors[field][0];
+function getError(errors: any, field: string): any | null {
+  if (errors.value && errors.value[field] && errors.value[field].length > 0) {
+    return errors.value[field][0];
   }
   return null;
 }
