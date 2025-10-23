@@ -2,9 +2,9 @@
 import { ref } from 'vue'
 
 const visible = ref(false)
-const message = ref('')
+const message = ref<string>('')
 
-function showToast(text, duration = 4000) {
+function showToast(text: string, duration = 4000) {
   message.value = text
   visible.value = true
   setTimeout(() => (visible.value = false), duration)
