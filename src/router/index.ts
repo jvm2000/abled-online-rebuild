@@ -4,7 +4,7 @@ import News from '../pages/news.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '',
     name: 'Home',
     component: IndexPage
   },
@@ -12,7 +12,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/v2/'),
   routes
 })
 
