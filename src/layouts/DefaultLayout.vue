@@ -191,7 +191,10 @@ onUnmounted(() => {
 
             <div class="flex flex-col xl:flex-row xl:items-center xl:space-x-2">
               <p class="text-sm text-white">Email:</p>
-              <p class="text-sm text-teal-200">abledonline@genashtim.com</p>
+              <a 
+                class="text-sm text-teal-200"
+                href="mailto:abledonline@genashtim.com"
+              >abledonline@genashtim.com</a>
             </div>
           </div>
 

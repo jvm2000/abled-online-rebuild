@@ -2,8 +2,19 @@
 import { CalendarIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline'
 import { useRouter } from 'vue-router'  
 import Layout from '../layouts/DefaultLayout.vue';
+import { onMounted } from 'vue';
 
 const router = useRouter()
+
+function setTitle(titleChunk: string | null) {
+  document.title = titleChunk
+    ? `${titleChunk} · Abled Online`
+    : 'Abled Online'
+}
+
+onMounted(() => {
+  setTitle('News')
+})
 </script>
 
 <template>

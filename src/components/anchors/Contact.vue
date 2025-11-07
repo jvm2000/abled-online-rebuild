@@ -2,6 +2,7 @@
 import { reactive, ref } from 'vue';
 import BaseButton from '../BaseButton.vue';
 import BaseToast from '../BaseToast.vue';
+import { BASE_URL } from '../../config';
 
 type ContactForm = {
   full_name: string,
@@ -22,7 +23,7 @@ async function submitContact() {
   errors.value = []
   loading.value = true
 
-  const response = await fetch('http://localhost:8000/api/contact', {
+  const response = await fetch(`${BASE_URL}/api/contact`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
