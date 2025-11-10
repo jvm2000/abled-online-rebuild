@@ -10,6 +10,10 @@ type Page = {
   path: string
 }
 
+type Services = {
+  name: string,
+}
+
 const props = withDefaults(
   defineProps<{
     canPush?: boolean
@@ -29,6 +33,16 @@ const pageList = ref<Page[]>([
   { name: 'contact', path: 'contact' }
 ])
 const activeSection = ref('home')
+const services: Services[] = [
+  { name: 'PC Repair & Maintenance' },
+  { name: 'CCTV Services' },
+  { name: 'VOIP Application Setup' },
+  { name: 'Email Setup' },
+  { name: 'Mobile Phone Support (Android and IOS)' },
+  { name: 'Server Administration' },
+  { name: 'Cybersecurity' },
+  { name: 'Hardware Diagnostics' }
+]
 
 function scrollToSection(sectionId: string) {
   if (route.path !== '/') {
@@ -175,12 +189,13 @@ onUnmounted(() => {
         <div class="flex flex-col items-start space-y-3">
           <p class="text-lg text-gray-200 font-medium">Services</p>
 
-          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">PC Repair & Maintenance</p>
-          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">CCTV Security Services</p>
-          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">Software Installation</p>
-          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">Cybersecurity Solutions</p>
-          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">Network Support</p>
-          <p class="text-sm text-gray-200 cursor-pointer" @click="scrollToSection('services')">Remote Assistance</p>
+          <p 
+            v-for="service in services"
+            class="text-sm text-gray-200 cursor-pointer" 
+            @click="scrollToSection('services')"
+          >
+            {{ service.name }}
+          </p>
         </div>
 
         <div class="flex flex-col items-start space-y-3">
