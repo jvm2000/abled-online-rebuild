@@ -38,7 +38,9 @@ const services: Services[] = [
   { name: 'CCTV Services' },
   { name: 'VOIP Application Setup' },
   { name: 'Email Setup' },
-  { name: 'Mobile Phone Support (Android and IOS)' },
+]
+const services2: Services[] = [
+  { name: 'Mobile Phone Support' },
   { name: 'Server Administration' },
   { name: 'Cybersecurity' },
   { name: 'Hardware Diagnostics' }
@@ -175,29 +177,42 @@ onUnmounted(() => {
     </main>
 
     <footer class="px-6 sm:xl:px-24 py-8 bg-black w-full space-y-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 sm:lg:grid-cols-3 items-start border-b pb-6 border-gray-700">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-4 sm:xl:grid-cols-3 items-start border-b pb-6 border-gray-700">
         <div class="flex flex-col items-start space-y-6">
           <div class="relative">
             <img src="/images/logo.png" alt="Logo" class="h-16 sm:h-20">
           </div>
 
-          <p class="text-sm text-gray-200 max-w-xs">
+          <p class="text-sm text-gray-200 max-w-sm">
             Join our global community and experience top-notch PC support services at your fingertips. Your satisfaction is our priority.
           </p>
         </div>
 
-        <div class="flex flex-col items-start space-y-3">
-          <p class="text-lg text-gray-200 font-medium">Services</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex flex-col items-start space-y-3">
+            <p class="text-lg text-gray-200 font-medium">Services</p>
 
-          <p 
-            v-for="service in services"
-            class="text-sm text-gray-200 cursor-pointer" 
-            @click="scrollToSection('services')"
-          >
-            {{ service.name }}
-          </p>
+            <p 
+              v-for="service in services"
+              class="text-sm text-gray-200 cursor-pointer whitespace-nowrap" 
+              @click="scrollToSection(service.name)"
+            >
+              {{ service.name }}
+            </p>
+          </div>
+
+          <div class="flex flex-col items-start space-y-3">
+            <p class="invisible">NA</p>
+
+            <p 
+              v-for="service in services2"
+              class="text-sm text-gray-200 cursor-pointer whitespace-nowrap" 
+              @click="scrollToSection(service.name)"
+            >
+              {{ service.name }}
+            </p>
+          </div>
         </div>
-
         <div class="flex flex-col items-start space-y-3">
           <p class="text-lg text-gray-200 font-medium">Contact Info</p>
 

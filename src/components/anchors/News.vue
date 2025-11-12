@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function goToNews() {
-  router.push('/news').then(() => {
+  router.push('/news/abled-online-bags-first-prize-in-tokyo').then(() => {
     // Scroll instantly to top after route navigation
     window.scrollTo({ top: 0, behavior: 'auto' })
   })

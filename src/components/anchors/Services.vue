@@ -119,9 +119,10 @@ function scrollToSection(sectionId: string) {
     </div>
 
     <div class="flex justify-center">
-      <ul class="flex flex-wrap justify-center gap-4 px-6 sm:px-[85px]">
-        <li 
+      <div class="flex flex-wrap justify-center gap-4 px-6 sm:px-[85px]">
+        <section 
           v-for="service in services"
+          :id="service.name"
           class="p-6 bg-white rounded-md border border-gray-200 shadow-md relative transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl max-w-[435px]"
         >
           <div class="flex flex-col items-start space-y-4">
@@ -137,12 +138,12 @@ function scrollToSection(sectionId: string) {
               <div v-for="item in service.items" class="flex items-center space-x-2">
                 <span class="size-2 bg-teal-500 rounded-full" />
 
-                <p class="text-base text-black capitalize">{{ item }}</p>
+                <p class="text-base text-black capitasectionze">{{ item }}</p>
               </div>
             </div>
           </div>
-        </li>
-      </ul>
+        </section>
+      </div>
     </div>
 
     <div class="flex flex-col items-center space-y-4 px-6 sm:px-0">

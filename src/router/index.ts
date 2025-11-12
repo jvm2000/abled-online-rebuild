@@ -8,7 +8,7 @@ const routes = [
     name: 'Home',
     component: IndexPage
   },
-  { path: '/news', name: 'News', component: News }
+  { path: '/news/abled-online-bags-first-prize-in-tokyo', name: 'News', component: News }
 ]
 
 const router = createRouter({

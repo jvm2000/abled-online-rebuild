@@ -58,7 +58,7 @@ onMounted(() => {
         </p>
 
         <p class="text-base text-black">
-          Genashtim Innovative Learning Pte Ltd is an eLearning company passionate about employing PWDs. About 40% of Genashtim’s staff are PWDs, working from home in various cities and countries, serving clients in more than 10 countries.
+          Genashtim Pte Ltd is an eLearning company passionate about employing PWDs. About 40% of Genashtim’s staff are PWDs, working from home in various cities and countries, serving clients in more than 10 countries.
         </p>
 
         <p class="text-base text-black">
